@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: b17618b11f8cead4d97d7b4f19579c01
+timeCreated: 1436465628
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - start: {fileID: 182890, guid: 5d6de85b5f5c51447aad8214bbfc1671, type: 2}
+  - city1: {instanceID: 0}
+  - city2: {instanceID: 0}
+  - city3: {instanceID: 0}
+  - city4: {instanceID: 0}
+  - lab1: {instanceID: 0}
+  - lab2: {instanceID: 0}
+  - lab3: {instanceID: 0}
+  - lab4: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
