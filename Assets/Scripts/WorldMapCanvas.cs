@@ -25,6 +25,7 @@ public class WorldMapCanvas : MonoBehaviour {
 	}
 
 	public void ShowYesNoDialog(UnityAction yesMethod, string msg, string header) {
+		btnYes.GetComponent<Button>().onClick.RemoveAllListeners();
 		btnYes.GetComponent<Button>().onClick.AddListener(yesMethod);
 		yesNoDialogMessage.GetComponent<Text>().text = msg;
 		dialogHeader.GetComponent<Text>().text = header;
