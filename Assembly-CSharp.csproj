@@ -54,15 +54,22 @@
      <Compile Include="Assets\LabAssets\Scripts\MovingObject.cs" />
      <Compile Include="Assets\LabAssets\Scripts\SoundManager.cs" />
      <Compile Include="Assets\LabAssets\Scripts\Wall.cs" />
+     <Compile Include="Assets\Scripts\Base64.cs" />
      <Compile Include="Assets\Scripts\CameraScript.cs" />
-     <Compile Include="Assets\Scripts\CityManager.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\Loader.cs" />
+     <Compile Include="Assets\Scripts\LocalizationsLoader.cs" />
+     <Compile Include="Assets\Scripts\LocationManager.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
+     <Compile Include="Assets\Scripts\Strings.cs" />
+     <Compile Include="Assets\Scripts\WorldMapCanvas.cs" />
      <Compile Include="Assets\Scripts\WorldMapManager.cs" />
      <Compile Include="Assets\Scripts\WorldMapTile.cs" />
+     <Compile Include="Assets\Scripts\YesNoDialog.cs" />
+     <None Include="Assets\TextAssets\Russian.xml" />
      <None Include="Assets\Fonts\OFL.txt" />
      <None Include="Assets\LabAssets\Fonts\OFL.txt" />
+     <None Include="Assets\TextAssets\English.xml" />
  <Reference Include="UnityEngine.UI">
  <HintPath>H:/Unity3DDev/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

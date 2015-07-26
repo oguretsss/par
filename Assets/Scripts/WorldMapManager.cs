@@ -107,18 +107,7 @@ public class WorldMapManager : MonoBehaviour {
 				}
 			}
 		}
-
-		switch (mapObjects[(int)coords.x, (int)coords.y].transform.tag) {
-			case "City":
-				CityManager.instance.LoadCity(coords);
-				break;
-			case "Lab":
-				CityManager.instance.LoadLab(coords);
-				break;
-			default:
-				AttemptRandomEncounter();
-				break;
-		}
+		LocationManager.instance.LoadLocation(mapObjects[(int)coords.x, (int)coords.y], coords);
 	}
 
 	void SetupObjectsOnMap(GameObject[,] map) {
@@ -144,7 +133,7 @@ public class WorldMapManager : MonoBehaviour {
 				else {
 					mapObjects[x,y] = Instantiate(mapObject, new Vector3(x, y, 0f), Quaternion.identity) as GameObject;
 					mapObjects[x,y].transform.SetParent(worldHolder);
-					CityManager.instance.registerNewLocation(new Vector2(x, y), 0, objType);
+					LocationManager.instance.registerNewLocation(new Vector2(x, y), 0, objType);
 				}
 				break;
 			case Zone.Zone2:
@@ -155,7 +144,7 @@ public class WorldMapManager : MonoBehaviour {
 				else {
 					mapObjects[x,y] = Instantiate(mapObject, new Vector3(x, y, 0f), Quaternion.identity) as GameObject;
 					mapObjects[x,y].transform.SetParent(worldHolder);
-					CityManager.instance.registerNewLocation(new Vector2(x, y), 1, objType);
+					LocationManager.instance.registerNewLocation(new Vector2(x, y), 1, objType);
 				}
 				break;
 			case Zone.Zone3:
@@ -166,7 +155,7 @@ public class WorldMapManager : MonoBehaviour {
 				else {
 					mapObjects[x,y] = Instantiate(mapObject, new Vector3(x, y, 0f), Quaternion.identity) as GameObject;
 					mapObjects[x,y].transform.SetParent(worldHolder);
-					CityManager.instance.registerNewLocation(new Vector2(x, y), 2, objType);
+					LocationManager.instance.registerNewLocation(new Vector2(x, y), 2, objType);
 				}
 				break;
 			case Zone.Zone4:
@@ -177,7 +166,7 @@ public class WorldMapManager : MonoBehaviour {
 				else {
 					mapObjects[x,y] = Instantiate(mapObject, new Vector3(x, y, 0f), Quaternion.identity) as GameObject;
 					mapObjects[x,y].transform.SetParent(worldHolder);
-					CityManager.instance.registerNewLocation(new Vector2(x, y), 3, objType);
+					LocationManager.instance.registerNewLocation(new Vector2(x, y), 3, objType);
 				}
 				break;
 			default:

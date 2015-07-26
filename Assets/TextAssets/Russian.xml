@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<strings>
+<!--BUTTONS-->
+	<YES>ДА</YES>
+	<NO>НЕТ</NO>
+<!--DIALOGS-->
+	<ENTER_LOCATION_DIALOG>Войти сюда?</ENTER_LOCATION_DIALOG>
+<!--LABELS-->
+	<CITY>Город</CITY>
+	<LAB>Лаборатория</LAB>
+</strings>

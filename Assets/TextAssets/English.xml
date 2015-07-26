@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<strings>
+<!--BUTTONS-->
+	<YES>YES</YES>
+	<NO>NO</NO>
+<!--DIALOGS-->
+	<ENTER_LOCATION_DIALOG>Enter this location?</ENTER_LOCATION_DIALOG>
+<!--LABELS-->
+	<CITY>City</CITY>
+	<LAB>Lab</LAB>
+</strings>

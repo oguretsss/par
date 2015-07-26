@@ -9,6 +9,7 @@ public class Player : MonoBehaviour {
 	public float moveTime = 0.1f;
 	float inverseMoveTime;
 	public Vector2 coordinates;
+	bool isMoving = false;
 	
 	public delegate void InvestigateHandler(Vector2 coords, int radius);
 	public event InvestigateHandler Investigate;
@@ -38,14 +39,16 @@ public class Player : MonoBehaviour {
 	}
 
 	void Move(int xDir, int yDir) {
-		Vector2 start = transform.position;
-		Vector2 end = start + new Vector2(xDir, yDir);
-		if (end.x < 0 || end.y < 0 || end.x > GameManager.instance.worldMapScript.columns - 1 || end.y > GameManager.instance.worldMapScript.rows - 1)
-			return;
-		coordinates = end;
-		StartCoroutine(SmoothMovement(end));
-		Investigate(coordinates, discoverRadius);
-		Debug.Log("Coordinates: " + coordinates);
+		if (isMoving) {
+			Vector2 start = transform.position;
+			Vector2 end = start + new Vector2(xDir, yDir);
+			if (end.x < 0 || end.y < 0 || end.x > GameManager.instance.worldMapScript.columns - 1 || end.y > GameManager.instance.worldMapScript.rows - 1)
+				return;
+			coordinates = end;
+			StartCoroutine(SmoothMovement(end));
+			Investigate(coordinates, discoverRadius);
+			Debug.Log("Coordinates: " + coordinates);
+		}
 	}
 
 	protected IEnumerator SmoothMovement(Vector3 end)
@@ -69,5 +72,13 @@ public class Player : MonoBehaviour {
 			//Return and loop until sqrRemainingDistance is close enough to zero to end the function
 			yield return null;
 		}
+	}
+
+	public void StopMoving() {
+		isMoving = false;
+	}
+
+	public void ContinueMoving() {
+		isMoving = true;
 	}
 }

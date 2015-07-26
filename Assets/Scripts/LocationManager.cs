@@ -1,12 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Assets.Scripts;
 
-public class CityManager : MonoBehaviour {
-	
+public class LocationManager : MonoBehaviour {
+
+	public delegate void LocationHandler(GameObject obj, Vector2 coordinates, string header);
+	public event LocationHandler EnterLocation;
 	MapObject[] labs;
 	MapObject[] cities;
 	MapObject currentLocation;
-	public static CityManager instance = null;
+	public static LocationManager instance = null;
 	// Use this for initialization
 	void Awake () {
 		if (instance == null)
@@ -16,22 +19,31 @@ public class CityManager : MonoBehaviour {
 		cities = new MapObject[4];
 		labs = new MapObject[4];
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 
-	public void LoadCity(Vector2 coords) {
+	public void LoadLocation(GameObject tile, Vector2 coordinates) {
+		switch (tile.transform.tag) {
+		case "City":
+			LoadCity(coordinates);
+			EnterLocation(tile, coordinates, Strings.CITY);
+			break;
+		case "Lab":
+			LoadLab(coordinates);
+			EnterLocation(tile, coordinates, Strings.LAB);
+			break;
+		default:
+			Debug.Log("Хуйня какая-то получилась!");
+			break;
+		}
+	}
+	void LoadCity(Vector2 coords) {
 		for (int i = 0; i < cities.Length; i++) {
 			if (coords == cities[i].Location)
 				currentLocation = cities[i];
 		}
 		Debug.Log("Current Location is: " + currentLocation.Type + currentLocation.mapObjectNumber);
-		//Application.LoadLevel(currentLocation.Type);
 	}
 
-	public void LoadLab(Vector2 coords) {
+	void LoadLab(Vector2 coords) {
 		for (int i = 0; i < labs.Length; i++) {
 			if (coords == labs[i].Location)
 				currentLocation = labs[i];
@@ -50,6 +62,19 @@ public class CityManager : MonoBehaviour {
 				labs[number] = new MapObject(coords, number, objType);
 			break;
 		}
+	}
+
+	public void ChangeScene() {
+			switch (currentLocation.Type) {
+				case "City":
+					Debug.Log("Loading city from ChangeScene()...");
+					break;
+				case "Lab":
+					Debug.Log("Loading lab from ChangeScene()...");
+					break;
+				default:
+					break;
+			}
 	}
 
 	class MapObject {
