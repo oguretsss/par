@@ -1,18 +1,19 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GameManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\TextAssets\English.xml">
     <Files>
-      <File FileName="Assets\Scripts\WorldMapManager.cs" Line="110" Column="81" />
-      <File FileName="Assets\Scripts\GameManager.cs" Line="55" Column="27" />
-      <File FileName="Assets\Scripts\LocationManager.cs" Line="70" Column="6" />
+      <File FileName="Assets\Scripts\WorldMapManager.cs" Line="100" Column="1" />
+      <File FileName="Assets\Scripts\GameManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\LocationManager.cs" Line="43" Column="17" />
       <File FileName="Assets\Scripts\CameraScript.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Player.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Loader.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Strings.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\WorldMapCanvas.cs" Line="29" Column="19" />
-      <File FileName="Assets\TextAssets\English.xml" Line="7" Column="24" />
-      <File FileName="Assets\TextAssets\Russian.xml" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\LocalizationsLoader.cs" Line="8" Column="56" />
+      <File FileName="Assets\Scripts\Strings.cs" Line="72" Column="1" />
+      <File FileName="Assets\Scripts\WorldMapCanvas.cs" Line="14" Column="19" />
+      <File FileName="Assets\TextAssets\English.xml" Line="16" Column="477" />
+      <File FileName="Assets\TextAssets\Russian.xml" Line="12" Column="436" />
+      <File FileName="Assets\Scripts\LocalizationsLoader.cs" Line="1" Column="1" />
+      <File FileName="Assets\CityCanvas.cs" Line="27" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

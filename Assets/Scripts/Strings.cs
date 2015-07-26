@@ -12,15 +12,22 @@ namespace Assets.Scripts {
 		//STRINGS
 		public static string YES;
 		public static string NO;
+		public static string CONTRACTS;
+		public static string SHOP;
+		public static string EXIT;
+		public static string REST;
 		public static string ENTER_LOCATION_DIALOG;
 		public static string CITY;
 		public static string LAB;
+		public static string CITY_1_NAME;
+		public static string CITY_1_DESCRIPTION;
 
 
 
 		public static void SetLanguage(string loadedLanguageAsset) {
 			stringReader = new StringReader(loadedLanguageAsset);
 			reader = new XmlTextReader(stringReader);
+
 			reader.ReadToFollowing("YES");
 			YES = reader.ReadElementContentAsString();
 			Debug.Log(YES);
@@ -28,6 +35,22 @@ namespace Assets.Scripts {
 			reader.ReadToFollowing("NO");
 			NO = reader.ReadElementContentAsString();
 			Debug.Log(NO);
+
+			reader.ReadToFollowing("CONTRACTS");
+			CONTRACTS = reader.ReadElementContentAsString();
+			Debug.Log(CONTRACTS);
+
+			reader.ReadToFollowing("SHOP");
+			SHOP = reader.ReadElementContentAsString();
+			Debug.Log(SHOP);
+
+			reader.ReadToFollowing("EXIT");
+			EXIT = reader.ReadElementContentAsString();
+			Debug.Log(EXIT);
+
+			reader.ReadToFollowing("REST");
+			REST = reader.ReadElementContentAsString();
+			Debug.Log(REST);
 
 			reader.ReadToFollowing("ENTER_LOCATION_DIALOG");
 			ENTER_LOCATION_DIALOG = reader.ReadElementContentAsString();
@@ -40,6 +63,15 @@ namespace Assets.Scripts {
 			reader.ReadToFollowing("LAB");
 			LAB = reader.ReadElementContentAsString();
 			Debug.Log(LAB);
+
+			reader.ReadToFollowing("CITY_1_NAME");
+			CITY_1_NAME = reader.ReadElementContentAsString();
+			Debug.Log(CITY_1_NAME);
+
+			reader.ReadToFollowing("CITY_1_DESCRIPTION");
+			CITY_1_DESCRIPTION = reader.ReadElementContentAsString();
+			Debug.Log(CITY_1_DESCRIPTION);
+
 			stringReader.Dispose();
 		}
 	}

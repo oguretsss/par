@@ -67,7 +67,7 @@ public class LocationManager : MonoBehaviour {
 	public void ChangeScene() {
 			switch (currentLocation.Type) {
 				case "City":
-					Debug.Log("Loading city from ChangeScene()...");
+				Application.LoadLevel("City");
 					break;
 				case "Lab":
 					Debug.Log("Loading lab from ChangeScene()...");
